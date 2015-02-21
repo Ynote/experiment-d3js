@@ -1,0 +1,12 @@
+{
+  "name": "d3-instagram-force-layout",
+  "description": "Graphical representation of Instagram data with d3 data force layout",
+  "dependencies": {
+    "coffee-script": "^1.9.1",
+    "q": "^1.1.2",
+    "ramda": "^0.9.1"
+  },
+  "scripts": {
+      "prestart": "coffee -c bin/create-json.coffee"
+  }
+}
