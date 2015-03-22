@@ -1,12 +1,231 @@
+<!DOCTYPE html>>
 <html>
-  <head>
-      <title>d3-instagram-force-layout example</title>
-      <link type="text/css" rel="stylesheet" href="css/vendor/bootstrap.min.css" />
-      <link type="text/css" rel="stylesheet" href="css/gen/main.css" />
-  </head>
-  <body>
-    <div id="viz"></div>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="js/gen/main.js"></script>
-  </body>
+    <head>
+        <title>d3-instagram-force-layout example</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link type="text/css" rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/gen/main.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-primary">Instagram data with d3.js</h1>
+            <h4>Relation between Instagram tags of @Ynote_hk</h4>
+            <p>In order to see the dynamics between <a href="https://instagram.com/Ynote_hk/" target="_blank">@Ynote_hk</a> pictures on Instagram, we display these pictures tags relation mapping. As we can see, tags are used by distinct groups, probably defined by a location or a type of picture.</p>
+            <div id="viz"></div>
+            <h4>Json output</h4>
+            <p>A <a href="https://github.com/Ynote/d3-instagram-force-layout" target="_blank">small script</a> in Node.js enables us to fetch Instagram API data from <a href="https://instagram.com/Ynote_hk/" target="_blank">@Ynote_hk</a> account and creates a json file. This latter is used with d3.js to display a force-directed graph.</p>
+            <p>This example uses a static response from Instagram API. On the next step, we should add an Instragram connect and display the graph dynamically.</p>
+            <p>
+                For more information:
+                <ul>
+                    <li>On the Instagram API: <a href="https://instagram.com/developer/" target="_blank">https://instagram.com/developer/</a>.</li>
+                    <li>On the d3 force layout: <a href="https://github.com/mbostock/d3/wiki/Force-Layout" target="_blank">https://github.com/mbostock/d3/wiki/Force-Layout</a></li>
+                </ul>
+            </p>
+            <p>Here is the output example used on this graph: </p>
+            <pre>
+{"nodes":[
+{"name":"yhkpatterns","id":0},
+{"name":"drawing","id":1},
+{"name":"ink","id":2},
+{"name":"lotusroot","id":3},
+{"name":"spinach","id":4},
+{"name":"soba","id":5},
+{"name":"shrimps","id":6},
+{"name":"sky","id":7},
+{"name":"tree","id":8},
+{"name":"lines","id":9},
+{"name":"paris","id":10},
+{"name":"wood","id":11},
+{"name":"sr","id":19},
+{"name":"coffee","id":20},
+{"name":"milk","id":21},
+{"name":"cinnamon","id":22},
+{"name":"baguette","id":23},
+{"name":"oliceoil","id":24},
+{"name":"sardine","id":25},
+{"name":"lemon","id":26},
+{"name":"sunflowerseed","id":27},
+{"name":"shallot","id":28},
+{"name":"carrots","id":29},
+{"name":"marrowseed","id":30},
+{"name":"garlic","id":31},
+{"name":"palmheart","id":32},
+{"name":"streetlight","id":33},
+{"name":"place","id":34},
+{"name":"winter","id":35},
+{"name":"bastille","id":36},
+{"name":"cloud","id":37},
+{"name":"operahouse","id":38},
+{"name":"opera","id":39},
+{"name":"typograph":49},
+{"name":"signage","id":50},
+{"name":"genoise","id":51},
+{"name":"patisserieciel","id":52},
+{"name":"yuzu","id":53},
+{"name":"spongecake","id":54},
+{"name":"chocolate","id":55},
+{"name":"light","id":56},
+{"name":"station","id":57},
+{"name":"city","id":58},
+{"name":"silhouette","id":59},
+{"name":"sunset","id":60},
+{"name":"crane","id":61},
+{"name":"trees","id":62},
+{"name":"tea","id":63},
+{"name":"gyozas","id":64},
+{"name":"streetfood","id":65},
+{"name":"comics","id":66},
+{"name":"groot","id":67},
+{"name":"guardiansofthegalaxy","id":68},
+{"name":"marvel","id":69},
+{"name":"pavilion","id":70},
+{"name":"cloudy","id":71},
+{"name":"grotto","id":72},
+{"name":"lacdaumesnil","id":73}
+],
+"links":[
+{"source":0,"target":1},
+{"source":0,"target":2},
+{"source":1,"target":2},
+{"source":3,"target":4},
+{"source":3,"target":5},
+{"source":3,"target":6},
+{"source":4,"target":5},
+{"source":4,"target":6},
+{"source":5,"target":6},
+{"source":7,"target":8},
+{"source":7,"target":9},
+{"source":13,"target":14},
+{"source":10,"target":15},
+{"source":11,"target":15},
+{"source":16,"target":7},
+{"source":16,"target":17},
+{"source":16,"target":18},
+{"source":16,"target":19},
+{"source":17,"target":7},
+{"source":18,"target":7},
+{"source":19,"target":7},
+{"source":17,"target":18},
+{"source":17,"target":19},
+{"source":18,"target":19},
+{"source":20,"target":21},
+{"source":24,"target":25},
+{"source":24,"target":26},
+{"source":24,"target":27},
+{"source":24,"target":28},
+{"source":24,"target":29},
+{"source":24,"target":30},
+{"source":24,"target":31},
+{"source":24,"target":32},
+{"source":25,"target":26},
+{"source":25,"target":27},
+{"source":25,"target":28},
+{"source":25,"target":29},
+{"source":25,"target":30},
+{"source":25,"target":31},
+{"source":25,"target":32},
+{"source":26,"target":27},
+{"source":26,"target":28},
+{"source":26,"target":29},
+{"source":26,"target":30},
+{"source":26,"target":31},
+{"source":26,"target":32},
+{"source":27,"target":28},
+{"source":27,"target":29},
+{"source":30,"target":32},
+{"source":31,"target":32},
+{"source":33,"target":34},
+{"source":33,"target":35},
+{"source":10,"target":33},
+{"source":33,"target":36},
+{"source":33,"target":7},
+{"source":33,"target":37},
+{"source":34,"target":35},
+{"source":10,"target":34},
+{"source":34,"target":36},
+{"source":34,"target":7},
+{"source":34,"target":37},
+{"source":10,"target":35},
+{"source":35,"target":36},
+{"source":35,"target":7},
+{"source":36,"target":38},
+{"source":38,"target":40},
+{"source":34,"target":39},
+{"source":34,"target":40},
+{"source":10,"target":39},
+{"source":10,"target":40},
+{"source":36,"target":39},
+{"source":39,"target":40},
+{"source":36,"target":40},
+{"source":10,"target":41},
+{"source":10,"target":42},
+{"source":41,"target":42},
+{"source":43,"target":44},
+{"source":43,"target":45},
+{"source":35,"target":43},
+{"source":10,"target":43},
+{"source":44,"target":45},
+{"source":35,"target":44},
+{"source":10,"target":44},
+{"source":35,"target":45},
+{"source":10,"target":45},
+{"source":10,"target":46},
+{"source":10,"target":47},
+{"source":10,"target":48},
+{"source":36,"target":46},
+{"source":46,"target":47},
+{"source":46,"target":48},
+{"source":36,"target":47},
+{"source":36,"target":48},
+{"source":47,"target":48},
+{"source":10,"target":49},
+{"source":52,"target":53},
+{"source":52,"target":54},
+{"source":52,"target":55},
+{"source":22,"target":53},
+{"source":22,"target":54},
+{"source":22,"target":55},
+{"source":53,"target":54},
+{"source":53,"target":55},
+{"source":54,"target":55},
+{"source":10,"target":56},
+{"source":10,"target":57},
+{"source":56,"target":57},
+{"source":59,"target":61},
+{"source":59,"target":7},
+{"source":59,"target":62},
+{"source":60,"target":61},
+{"source":60,"target":7},
+{"source":60,"target":62},
+{"source":61,"target":7},
+{"source":61,"target":62},
+{"source":62,"target":7},
+{"source":10,"target":63},
+{"source":10,"target":64},
+{"source":10,"target":65},
+{"source":63,"target":64},
+{"source":63,"target":65},
+{"source":64,"target":65},
+{"source":66,"target":67},
+{"source":66,"target":68},
+{"source":66,"target":69},
+{"source":67,"target":68},
+{"source":67,"target":69},
+{"source":68,"target":69},
+{"source":70,"target":71},
+{"source":70,"target":72},
+{"source":10,"target":70},
+{"source":70,"target":73},
+{"source":14,"target":70},
+{"source":10,"target":62},
+{"source":14,"target":73},
+{"source":62,"target":73},
+{"source":14,"target":62}
+]}
+            </pre>
+        </div>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="js/gen/main.js"></script>
+    </body>
 </html>
