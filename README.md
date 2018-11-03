@@ -1,4 +1,10 @@
-# d3-instagram-force-layout
+# Experiment D3.js
+
+> Experiment from 2014
+
+This is a small project that intends to test D3.js.
+
+**Previously called d3-instagram-force-layout**
 
 This script is used to create a json file that can be passed to the data force layout of d3.js
 The final purpose is to used the Instagram connect to create dynamically this json file and display a graphical representation of different data of the connected user Instagram pictures.
