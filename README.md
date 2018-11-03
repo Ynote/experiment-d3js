@@ -9,7 +9,7 @@ This is a small project that intends to test D3.js.
 This script is used to create a json file that can be passed to the data force layout of d3.js
 The final purpose is to used the Instagram connect to create dynamically this json file and display a graphical representation of different data of the connected user Instagram pictures.
 
-The project : [http://ynote.github.io/d3-instagram-force-layout](http://ynote.github.io/d3-instagram-force-layout)
+The project : [http://ynote.github.io/experiment-d3js](http://ynote.github.io/experiment-d3js/)
 
 ![Yay! A cool graph :D](https://raw.githubusercontent.com/Ynote/d3-instagram-force-layout/master/d3-instagram-force-layout.jpg)
 
